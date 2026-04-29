@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dd4t7vvrf6lgv"]
+
+[ext_resource type="FontFile" uid="uid://dwcj0qm2lxuog" path="res://Assets/Fonts/alagard.ttf" id="1_rcghu"]
+
+[resource]
+font = ExtResource("1_rcghu")
+font_size = 70
+font_color = Color(0.9999998, 0.9198806, 0.7206403, 1)
+outline_size = 20
+outline_color = Color(0.36222854, 0.3312107, 0.25211528, 1)

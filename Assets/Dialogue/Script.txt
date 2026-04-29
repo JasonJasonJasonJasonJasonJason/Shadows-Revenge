@@ -1,0 +1,152 @@
+{Scene 1}
+[CutToPlayer]
+Narrator: This is how my story began:
+Character: This is the first time i've been back since my father's death.
+Character: My brother thinks I'm dead, so he wont be expecting me.
+Character: I will take back control and save this region from his terror
+[ShowTutorial, Walking]
+{/Scene 1}
+
+{Scene 2}
+[HideTutorial, Walking]
+[CutToPlayer]
+Character: How will I get past the gate
+Character: It's not like I can walk in.
+[ShadowMoveZ, 2]
+[Wait, 0.5]
+[CutToNode, ShadowText]
+Shadow: I can help you with that.
+[CutToPlayer]
+[Wait, 0.5]
+[FlipPlayer]
+[RunWhileText, [CameraShake, 0.05]]
+Character: Who was that!?
+[Wait, 0.5]
+[CutToNode, ShadowText]
+Shadow: I'm the yokai that lives in the shadows.
+[Wait, 0.3]
+Shadow: Do you want revenge?
+[Wait, 0.5]
+[CutToPlayer]
+Character: Yes I do.
+[Wait, 0.5]
+[CutToNode, ShadowText]
+Shadow: Well, you can't go sneaking in there unarmed like that
+[Wait, 0.5]
+[CutToPlayer]
+[GivePowers]
+[Wait, 0.5]
+[Move, (-0.145,0.09,z)]
+[Wait, 2]
+[CutToPlayer]
+[CutToNode, ShadowText]
+Shadow: Here are my powers, you can now travel through shadows.
+[Wait, 0.3]
+Shadow: Get your revenge!
+[FlipPlayer]
+[ShowTutorial, Shadow]
+{/Scene 2}
+
+
+{Scene 3}
+[HideTutorial, Shadow]
+[CutToPlayer]
+[ShadowMoveZ, 5.3]
+[CutToNode, ShadowText]
+[RunWhileText, [CameraShake, 0.05]]
+Shadow: Wait!
+[CutToPlayer]
+[Wait, 0.5]
+[FlipPlayer]
+Character: What?
+[CutToNode, ShadowText]
+Shadow: Don't you see that guard over there?
+[Follow, Enemy]
+[Wait, 2]
+[StopFollow]
+[CutToPlayer]
+Character: How do I get past him?
+[CutToNode, ShadowText]
+Shadow: Look for any Shadow.
+[Wait, 0.3]
+Shadow: Avoid combat as much as possible.
+[Wait, 0.3]
+Shadow: My powers can't help you with that
+[CutToPlayer]
+[Wait, 0.5]
+[FlipPlayer]
+Character: So don't get caught?
+[Wait, 0.3]
+Character: Easy enough, I guess
+{/Scene 3}
+
+{Scene 4}
+[CutToPlayer]
+Character: My brother has really let this place go when taking charge.
+[Move, (-1.083,0.412,34.856)]
+[Wait, 1]
+[CutToPlayer]
+Character: Man that looks deep.
+[Wait, 0.5]
+Character: Just don't fall down.
+[ShowTutorial, Jump]
+{/Scene 4}
+
+{Scene 5}
+[HideTutorial, Jump]
+[CutToPlayer]
+[ShadowMoveZ, 45.344]
+[ShadowMoveY, 0.6]
+[Wait, 0.5]
+Character: Shit! The Shogan's room is right behind this wall!
+Character: I don't see a way around this.
+[CutToNode, ShadowText]
+Shadow: Up here bud.
+[CutToPlayer]
+Character: What? Shadow? Where are you?
+[CutToNode, ShadowText]
+[ShadowMoveZ, 45.144]
+Shadow: Use your powers to come up here.
+[CutToPlayer]
+{/Scene 5}
+
+{Scene 6}
+[CutToPlayer]
+[ShadowMoveY, 1.838]
+[ShadowMoveZ, 49.009]
+Character: Holy! I didn't know I could go up like this.
+[CutToNode, ShadowText]
+Shadow: I'm an all powerful being! Of course you could do this.
+[CutToPlayer]
+Character: But you can't attack anyone.
+[CutToNode, ShadowText]
+[RunWhileText, [CameraShake, 0.05]]
+Shadow: THAT IS BESIDES THE POINT HUMAN
+[Wait, 0.5]
+Shadow: Ahem...
+[Wait, 0.5]
+Shadow: Let's keep moving
+[CutToPlayer]
+{/Scene 6}
+
+{Scene 7}
+[CutToPlayer]
+[Wait, 0.5]
+Character: Oh shit...
+[CameraPan, (47.664,47.164,2)]
+[Wait, 0.5]
+[CameraPan, (48.943,49.493,2)]
+[Wait, 0.5]
+[CutToPlayer]
+Character: I don't think there is a way out of this
+[FadeToBlack, 1]
+Narrator: Sadly I had been caught
+Narrator: But that was only the start of mine, and the Shadow's journey
+Narrator: I had a lot more in store for me.
+[Wait, 0.5]
+Narrator: That was the demo for Shadow's Revenge
+Narrator: I know there is not a lot but I hope to add more in the future
+Narrator: Please look out for more in the future!
+Narrator: And thank you for playing my first game!
+[MainMenu]
+{/Scene 7}

@@ -1,0 +1,124 @@
+[gd_scene load_steps=16 format=3 uid="uid://df7122ql3wtkg"]
+
+[ext_resource type="Texture2D" uid="uid://dh7852owyva88" path="res://Assets/Textures/Wood/Mahogany/Planks/Mahogany_Planks_basecolor.png" id="1_x1f0h"]
+[ext_resource type="Texture2D" uid="uid://csoelovbkd5cs" path="res://Assets/Textures/Wood/Mahogany/Planks/Mahogany_Planks_height.png" id="2_aq7nf"]
+[ext_resource type="Texture2D" uid="uid://su67coqb11sy" path="res://Assets/Textures/Wood/Mahogany/Planks/Mahogany_Planks_normal.png" id="3_d7ool"]
+[ext_resource type="Texture2D" uid="uid://cqnyn18chjvqh" path="res://Assets/Textures/Wood/Mahogany/Planks/Mahogany_Planks_roughness.png" id="4_egh35"]
+[ext_resource type="Texture2D" uid="uid://bjk6gfwfl0y3r" path="res://Assets/Textures/Wood/Oak/Planks/Oak_Planks_basecolor.png" id="5_wkihl"]
+[ext_resource type="Texture2D" uid="uid://dxf5i8su2vvco" path="res://Assets/Textures/Wood/Oak/Planks/Oak_Planks_height.png" id="6_pmfcq"]
+[ext_resource type="Texture2D" uid="uid://bp8uvxe7u5aow" path="res://Assets/Textures/Wood/Oak/Planks/Oak_Planks_normal.png" id="7_ioo2a"]
+[ext_resource type="Texture2D" uid="uid://q4xi5ylx0wet" path="res://Assets/Textures/Wood/Oak/Planks/Oak_Planks_roughness.png" id="8_l7rib"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lf2qm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1lff"]
+albedo_texture = ExtResource("1_x1f0h")
+roughness_texture = ExtResource("4_egh35")
+normal_enabled = true
+normal_texture = ExtResource("3_d7ool")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_aq7nf")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ceqib"]
+albedo_texture = ExtResource("5_wkihl")
+roughness_texture = ExtResource("8_l7rib")
+normal_enabled = true
+normal_texture = ExtResource("7_ioo2a")
+heightmap_enabled = true
+heightmap_texture = ExtResource("6_pmfcq")
+uv1_scale = Vector3(0.5, 2.5, 0.1)
+uv1_offset = Vector3(0, 0.1, 0)
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_et3cy"]
+albedo_texture = ExtResource("5_wkihl")
+roughness_texture = ExtResource("8_l7rib")
+normal_enabled = true
+normal_texture = ExtResource("7_ioo2a")
+heightmap_enabled = true
+heightmap_texture = ExtResource("6_pmfcq")
+uv1_scale = Vector3(0.5, 1, 0.1)
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m237j"]
+albedo_texture = ExtResource("5_wkihl")
+roughness_texture = ExtResource("8_l7rib")
+normal_enabled = true
+normal_texture = ExtResource("7_ioo2a")
+heightmap_enabled = true
+heightmap_texture = ExtResource("6_pmfcq")
+uv1_offset = Vector3(0.5, 1.3, 0.1)
+texture_filter = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bxfa4"]
+size = Vector3(3.9391022, 1, 2.9638367)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1h27n"]
+size = Vector3(1.168457, 0.7774048, 2.9661865)
+
+[node name="Stair" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("BoxMesh_lf2qm")
+surface_material_override/0 = SubResource("StandardMaterial3D_h1lff")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 3, 1.0503156, 0.47657323, 0)
+mesh = SubResource("BoxMesh_lf2qm")
+surface_material_override/0 = SubResource("StandardMaterial3D_h1lff")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 3, 2.1354852, 0.9503217, 0)
+mesh = SubResource("BoxMesh_lf2qm")
+surface_material_override/0 = SubResource("StandardMaterial3D_h1lff")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 3, 3.2773232, 1.2966058, 0)
+mesh = SubResource("BoxMesh_lf2qm")
+surface_material_override/0 = SubResource("StandardMaterial3D_h1lff")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.17998213, -2.7976852e-09, 2.3324153, -0.46648306, -4.0781245e-09, 0.8999106, 1.39884255e-08, -0.1, -1.0195311e-07, 1.7076685, 0.86317044, 1.5511868)
+mesh = SubResource("BoxMesh_lf2qm")
+surface_material_override/0 = SubResource("StandardMaterial3D_ceqib")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.553427e-16, -4.371139e-09, 1, -0.5, -4.371139e-09, 0, 2.1855694e-08, -0.1, -4.371139e-08, 3.2855768, 1.2954621, 1.5511868)
+mesh = SubResource("BoxMesh_lf2qm")
+surface_material_override/0 = SubResource("StandardMaterial3D_et3cy")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.553427e-16, -4.371139e-09, 1.3, -0.5, -4.371139e-09, 0, 2.1855694e-08, -0.1, -5.6824803e-08, -0.005178511, 0.43193352, 1.5511868)
+mesh = SubResource("BoxMesh_lf2qm")
+surface_material_override/0 = SubResource("StandardMaterial3D_m237j")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.17998213, -2.7976852e-09, 2.3324153, -0.46648306, -4.0781245e-09, 0.8999106, 1.39884255e-08, -0.1, -1.0195311e-07, 1.7076685, 0.86317044, -1.5075366)
+mesh = SubResource("BoxMesh_lf2qm")
+surface_material_override/0 = SubResource("StandardMaterial3D_ceqib")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.553427e-16, -4.371139e-09, 1, -0.5, -4.371139e-09, 0, 2.1855694e-08, -0.1, -4.371139e-08, 3.2855768, 1.2954621, -1.5075366)
+mesh = SubResource("BoxMesh_lf2qm")
+surface_material_override/0 = SubResource("StandardMaterial3D_et3cy")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.553427e-16, -4.371139e-09, 1.3, -0.5, -4.371139e-09, 0, 2.1855694e-08, -0.1, -5.6824803e-08, -0.005178511, 0.43193352, -1.5075366)
+mesh = SubResource("BoxMesh_lf2qm")
+surface_material_override/0 = SubResource("StandardMaterial3D_m237j")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115306616, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.9120057, -0.4101778, 0, 0.4101778, 0.9120057, 0, 0, 0, 1, 1.0336163, 0.19851573, 0.017959595)
+shape = SubResource("BoxShape3D_bxfa4")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39437675, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 3.212898, 0.56442857, 0.027420044)
+shape = SubResource("BoxShape3D_1h27n")

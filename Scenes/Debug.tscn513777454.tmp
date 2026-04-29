@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvhoebtrrr24x"]
+
+[ext_resource type="PackedScene" uid="uid://m7gu7qjboq80" path="res://Scenes/Player.tscn" id="1_rwhvy"]
+[ext_resource type="Texture2D" uid="uid://dxx3r2fqtj6j0" path="res://Assets/Textures/Shadow.png" id="2_8koso"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8koso"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pr2ys"]
+albedo_color = Color(0.66493917, 0.980864, 0.6473068, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b5d6t"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rwhvy"]
+
+[sub_resource type="HeightMapShape3D" id="HeightMapShape3D_rwhvy"]
+
+[node name="Debug" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 0.1, 0, 0, 0, 50, 0, -0.056738377, 0)
+mesh = SubResource("BoxMesh_8koso")
+surface_material_override/0 = SubResource("StandardMaterial3D_pr2ys")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_b5d6t")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.809017, 0.58778524, 0, -0.58778524, 0.809017, 0, 48.237, 39.757267)
+shadow_enabled = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7984593, -12.686546)
+mesh = SubResource("BoxMesh_rwhvy")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 0.1, 0, 0, 0, 50, 0, -3.5919075, 0)
+mesh = SubResource("BoxMesh_8koso")
+surface_material_override/0 = SubResource("StandardMaterial3D_pr2ys")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+shape = SubResource("BoxShape3D_b5d6t")
+
+[node name="Player" parent="." instance=ExtResource("1_rwhvy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7075233, 0.9112303, 0)
+walk_speed = null
+sprint_speed = null
+crouch_speed = null
+acceleration = null
+jump_force = null
+mouse_sensitivity = null
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+modulate = Color(1, 1, 1, 0.49019608)
+texture = ExtResource("2_8koso")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Sprite3D"]
+transform = Transform3D(7, 0, 0, 0, 7, -1.9895198e-14, 0, 1.9895198e-14, 7, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Sprite3D/StaticBody3D" groups=["Shadow"]]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("HeightMapShape3D_rwhvy")

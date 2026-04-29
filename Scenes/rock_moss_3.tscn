@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://binpj76vc6i8c"]
+
+[ext_resource type="PackedScene" uid="uid://c66nhordt2owq" path="res://Assets/Models/Enviroment/Rocks/Rock_Moss_3.fbx" id="1_le4ni"]
+
+[node name="Rock_Moss_3" instance=ExtResource("1_le4ni")]
+
+[node name="Rock_Moss_3" parent="." index="0"]
+visibility_range_begin = 1.0

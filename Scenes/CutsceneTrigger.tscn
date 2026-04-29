@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc3tri2yfa50q"]
+
+[ext_resource type="Script" uid="uid://fl5pb8t6eh5d" path="res://Scripts/CutsceneTrigger.gd" id="1_qpgev"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vdcnt"]
+size = Vector3(1, 1, 0.25097656)
+
+[node name="CutsceneTrigger" type="Area3D"]
+script = ExtResource("1_qpgev")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.043701172)
+shape = SubResource("BoxShape3D_vdcnt")

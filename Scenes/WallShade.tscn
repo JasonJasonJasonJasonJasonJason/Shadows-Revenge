@@ -1,0 +1,116 @@
+[gd_scene load_steps=16 format=3 uid="uid://fkvwap22bif5"]
+
+[ext_resource type="Texture2D" uid="uid://bbv5lxu7o2shn" path="res://Assets/Textures/Wood/Birch/Planks/Birch_Planks_basecolor.png" id="1_ksphp"]
+[ext_resource type="Texture2D" uid="uid://8mi452j6uacx" path="res://Assets/Textures/Wood/Birch/Planks/Birch_Planks_ambientocclusion.png" id="2_do2an"]
+[ext_resource type="Texture2D" uid="uid://q6uwnjfhtcnq" path="res://Assets/Textures/Wood/Birch/Planks/Birch_Planks_height.png" id="3_jj0u5"]
+[ext_resource type="Texture2D" uid="uid://c3ab277llt5s4" path="res://Assets/Textures/Wood/Birch/Planks/Birch_Planks_normal.png" id="4_h5gcn"]
+[ext_resource type="Texture2D" uid="uid://cs1seje7hs5rp" path="res://Assets/Textures/Wood/Birch/Planks/Birch_Planks_metallic.png" id="5_wm4q4"]
+[ext_resource type="Texture2D" uid="uid://bsl4bdy2ujfer" path="res://Assets/Textures/Wood/Birch/Planks/Birch_Planks_roughness.png" id="6_471q8"]
+[ext_resource type="Texture2D" uid="uid://cje8yedbfsucx" path="res://Assets/Textures/Wood/Teak/Planks/Teak_Planks_basecolor.png" id="7_5ubac"]
+[ext_resource type="Texture2D" uid="uid://bbfu3hum37ne" path="res://Assets/Textures/Wood/Teak/Planks/Teak_Planks_ambientocclusion.png" id="8_i264n"]
+[ext_resource type="Texture2D" uid="uid://cvrcw1h0lme6n" path="res://Assets/Textures/Wood/Teak/Planks/Teak_Planks_height.png" id="9_7hdon"]
+[ext_resource type="Texture2D" uid="uid://c23xbiw588k71" path="res://Assets/Textures/Wood/Teak/Planks/Teak_Planks_normal.png" id="10_e5i0a"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nkglm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7bgig"]
+albedo_texture = ExtResource("1_ksphp")
+normal_enabled = true
+normal_texture = ExtResource("4_h5gcn")
+ao_enabled = true
+ao_texture = ExtResource("2_do2an")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_jj0u5")
+uv1_scale = Vector3(4, 1, 0.1)
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0i71e"]
+albedo_texture = ExtResource("1_ksphp")
+metallic = 1.0
+metallic_texture = ExtResource("5_wm4q4")
+roughness_texture = ExtResource("6_471q8")
+normal_enabled = true
+normal_texture = ExtResource("4_h5gcn")
+ao_enabled = true
+ao_texture = ExtResource("2_do2an")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_jj0u5")
+uv1_scale = Vector3(0.5, 1, 0.1)
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8dbmp"]
+albedo_texture = ExtResource("1_ksphp")
+roughness_texture = ExtResource("6_471q8")
+normal_enabled = true
+normal_texture = ExtResource("4_h5gcn")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_jj0u5")
+uv1_scale = Vector3(1.4, 1, 0.01)
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aaw4f"]
+albedo_texture = ExtResource("7_5ubac")
+normal_enabled = true
+normal_texture = ExtResource("10_e5i0a")
+ao_enabled = true
+ao_texture = ExtResource("8_i264n")
+heightmap_enabled = true
+heightmap_texture = ExtResource("9_7hdon")
+uv1_scale = Vector3(0.05, 0.05, 0.05)
+texture_filter = 0
+
+[node name="Wall" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0)
+visibility_range_begin = 160.63
+mesh = SubResource("BoxMesh_nkglm")
+surface_material_override/0 = SubResource("StandardMaterial3D_7bgig")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 1.8616165, 0)
+visibility_range_begin = 160.63
+mesh = SubResource("BoxMesh_nkglm")
+surface_material_override/0 = SubResource("StandardMaterial3D_7bgig")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.865, 0, 0, 0, 0.1, -1.7495234, 0.93331724, 0)
+visibility_range_begin = 160.63
+mesh = SubResource("BoxMesh_nkglm")
+surface_material_override/0 = SubResource("StandardMaterial3D_0i71e")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.865, 0, 0, 0, 0.1, 1.7502649, 0.93331724, 0)
+visibility_range_begin = 160.63
+mesh = SubResource("BoxMesh_nkglm")
+surface_material_override/0 = SubResource("StandardMaterial3D_0i71e")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.4, 0, 0, 0, 0.865, 0, 0, 0, 0.1, 0.0065621585, 0.93331724, 0)
+visibility_range_begin = 160.63
+mesh = SubResource("BoxMesh_nkglm")
+surface_material_override/0 = SubResource("StandardMaterial3D_8dbmp")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 1, 0, 0, 0, 0.05, 1.1070819, 0.99726516, 0)
+visibility_range_begin = 160.63
+mesh = SubResource("BoxMesh_nkglm")
+surface_material_override/0 = SubResource("StandardMaterial3D_aaw4f")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 1, 0, 0, 0, 0.05, -1.075232, 0.99726516, 0)
+visibility_range_begin = 160.63
+mesh = SubResource("BoxMesh_nkglm")
+surface_material_override/0 = SubResource("StandardMaterial3D_aaw4f")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.1855695e-09, 1, -2.1855695e-09, 0, -4.371139e-08, -0.05, -0.05, -4.371139e-08, 9.553427e-17, -1.1178153, 0.9201065, 0)
+visibility_range_begin = 160.63
+mesh = SubResource("BoxMesh_nkglm")
+surface_material_override/0 = SubResource("StandardMaterial3D_aaw4f")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.1855695e-09, 1, -2.1855695e-09, 0, -4.371139e-08, -0.05, -0.05, -4.371139e-08, 9.553427e-17, 1.1115606, 0.9201065, 0)
+visibility_range_begin = 160.63
+mesh = SubResource("BoxMesh_nkglm")
+surface_material_override/0 = SubResource("StandardMaterial3D_aaw4f")

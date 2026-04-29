@@ -1,0 +1,353 @@
+[gd_scene load_steps=14 format=3 uid="uid://chdxkoa11u7t3"]
+
+[ext_resource type="Script" uid="uid://iif5pepef3o4" path="res://Scripts/Player.gd" id="1_rpqav"]
+[ext_resource type="SpriteFrames" uid="uid://dhghi5ldwqhdu" path="res://Assets/Textures/Player/Sprites/Player.tres" id="2_kyqiw"]
+[ext_resource type="Script" uid="uid://oy0k4eilcgni" path="res://Scripts/PauseMenu.gd" id="3_52ee3"]
+[ext_resource type="Script" uid="uid://0okqemnvuuct" path="res://Scripts/Bubble.gd" id="3_gntrk"]
+[ext_resource type="FontFile" uid="uid://dk7o0c5eeri6s" path="res://Assets/Fonts/Alkhemikal.ttf" id="4_dewec"]
+[ext_resource type="FontFile" uid="uid://dwcj0qm2lxuog" path="res://Assets/Fonts/alagard.ttf" id="5_5ixxa"]
+[ext_resource type="Script" uid="uid://b7wfwodj7ov65" path="res://Scripts/Narrator.gd" id="5_nn08x"]
+[ext_resource type="LabelSettings" uid="uid://dd4t7vvrf6lgv" path="res://Scenes/MainMenu.tres" id="8_bhhdu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u8k5t"]
+size = Vector3(0.29571533, 0.37548828, 0.07589722)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kyqiw"]
+size = Vector3(1, 1.6625977, 1.8690491)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gntrk"]
+font = ExtResource("4_dewec")
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nn08x"]
+font = ExtResource("5_5ixxa")
+font_size = 40
+font_color = Color(1, 1, 0.60784316, 1)
+outline_size = 10
+outline_color = Color(0.36731872, 0.3580142, 2.8878452e-07, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_52ee3"]
+font = ExtResource("5_5ixxa")
+font_size = 60
+font_color = Color(1, 1, 0.7411765, 1)
+outline_size = 20
+outline_color = Color(0.49152577, 0.34691757, 0.28817514, 1)
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_rpqav")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.16960469, 0)
+cast_shadow = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+render_priority = 2
+sprite_frames = ExtResource("2_kyqiw")
+animation = &"Idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.0063171387, 0.03100586, -0.0026397705)
+shape = SubResource("BoxShape3D_u8k5t")
+
+[node name="ShadowCheck" type="RayCast3D" parent="."]
+collision_mask = 129
+collide_with_areas = true
+
+[node name="PlayerCamera" type="Camera3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.6343803, 0.43581608, -0.0050072074)
+current = true
+
+[node name="Hitbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.058154296, 0.19701232)
+shape = SubResource("BoxShape3D_kyqiw")
+disabled = true
+debug_color = Color(0.99614686, 0, 0.20082754, 0.41960785)
+
+[node name="Ability" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.22553994, 0.00960885)
+light_color = Color(0.9981671, 0.9999992, 0.64782417, 1)
+light_energy = 0.0
+light_indirect_energy = 2.167
+light_size = 0.046
+spot_range = 0.25
+spot_angle = 58.0
+spot_angle_attenuation = 2.639016
+
+[node name="UI" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="PlayerBubble" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_gntrk")
+
+[node name="Panel" type="Panel" parent="UI/PlayerBubble"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -496.0
+offset_top = -258.0
+offset_right = 496.0
+offset_bottom = 258.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/PlayerBubble/Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 995.0
+offset_bottom = 516.0
+label_settings = SubResource("LabelSettings_gntrk")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="NarratorBox" type="Control" parent="UI"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_nn08x")
+
+[node name="Panel" type="Panel" parent="UI/NarratorBox"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -496.0
+offset_top = -520.0
+offset_right = 496.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/NarratorBox/Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 995.0
+offset_bottom = 516.0
+label_settings = SubResource("LabelSettings_nn08x")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Proceed" type="Label" parent="UI"]
+texture_filter = 5
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -524.0
+offset_top = -199.0
+offset_right = 527.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press Enter to Proceed"
+label_settings = SubResource("LabelSettings_52ee3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letterbox" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LetterboxTop" type="ColorRect" parent="UI/Letterbox"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = -1
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 149.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LetterboxBottom" type="ColorRect" parent="UI/Letterbox"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = -1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -149.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="Fade" type="ColorRect" parent="UI"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PauseMenu" type="Control" parent="UI"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_52ee3")
+
+[node name="Panel" type="Panel" parent="UI/PauseMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -22.0
+offset_right = 4.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer"]
+z_index = 100
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_5ixxa")
+theme_override_font_sizes/font_size = 70
+text = "Resume"
+
+[node name="Options" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer"]
+z_index = 100
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_5ixxa")
+theme_override_font_sizes/font_size = 70
+text = "Options"
+
+[node name="MainMenu" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer"]
+z_index = 100
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_5ixxa")
+theme_override_font_sizes/font_size = 70
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer"]
+z_index = 100
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_5ixxa")
+theme_override_font_sizes/font_size = 70
+text = "Quit"
+
+[node name="OptionsPanel" type="Control" parent="UI/PauseMenu"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI/PauseMenu/OptionsPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/PauseMenu/OptionsPanel/Panel"]
+layout_mode = 0
+offset_left = 773.0
+offset_right = 1155.0
+offset_bottom = 162.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UI/PauseMenu/OptionsPanel/Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu/OptionsPanel/Panel/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/PauseMenu/OptionsPanel/Panel/HBoxContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Resolution"
+label_settings = ExtResource("8_bhhdu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resolution" type="OptionButton" parent="UI/PauseMenu/OptionsPanel/Panel/HBoxContainer/VBoxContainer3/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="UI/PauseMenu/OptionsPanel/Panel/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/PauseMenu/OptionsPanel/Panel/HBoxContainer/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+text = "FullScreen"
+label_settings = ExtResource("8_bhhdu")
+
+[node name="Fullscreen" type="CheckBox" parent="UI/PauseMenu/OptionsPanel/Panel/HBoxContainer/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Close" type="Button" parent="UI/PauseMenu/OptionsPanel/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -362.0
+offset_top = -231.0
+offset_right = 366.5
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_5ixxa")
+theme_override_font_sizes/font_size = 70
+text = "Close"
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+
+[node name="TypeSoundNarrator" type="AudioStreamPlayer3D" parent="."]
+volume_db = -54.979
+max_db = -5.0
+
+[node name="TypeSoundCharacter" type="AudioStreamPlayer3D" parent="."]
+volume_db = -31.275
+max_db = -5.0
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14277925, 0)

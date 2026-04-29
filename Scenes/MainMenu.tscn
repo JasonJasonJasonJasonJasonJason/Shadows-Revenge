@@ -1,0 +1,562 @@
+[gd_scene load_steps=20 format=3 uid="uid://eb3wfrndcnni"]
+
+[ext_resource type="Script" uid="uid://bie1q60hkqhxw" path="res://Scripts/MainMenu.gd" id="1_8e205"]
+[ext_resource type="Texture2D" uid="uid://rn16fvf4k5hm" path="res://Assets/Textures/Background layers/Layer_0000_9.png" id="1_fh7cp"]
+[ext_resource type="Texture2D" uid="uid://dt66t3v3upg4g" path="res://Assets/Textures/Background layers/Layer_0001_8.png" id="2_8e205"]
+[ext_resource type="Texture2D" uid="uid://b8ciw6f3rd05u" path="res://Assets/Textures/Background layers/Layer_0003_6.png" id="3_7467j"]
+[ext_resource type="Texture2D" uid="uid://q8mw13jpyor6" path="res://Assets/Textures/Background layers/Layer_0004_Lights.png" id="4_2x1g0"]
+[ext_resource type="Texture2D" uid="uid://s7h8q24v2ju2" path="res://Assets/Textures/Background layers/Layer_0005_5.png" id="5_riqfo"]
+[ext_resource type="Texture2D" uid="uid://dvybq6bjmlvsw" path="res://Assets/Textures/Background layers/Layer_0006_4.png" id="6_yxkem"]
+[ext_resource type="Texture2D" uid="uid://dmgc8ny61gqv2" path="res://Assets/Textures/Background layers/Layer_0007_Lights.png" id="7_7v4os"]
+[ext_resource type="Texture2D" uid="uid://h4vb2s1l8p5q" path="res://Assets/Textures/Background layers/Layer_0008_3.png" id="8_pjscj"]
+[ext_resource type="Texture2D" uid="uid://dgtg2wl2edsxo" path="res://Assets/Textures/Background layers/Layer_0009_2.png" id="9_m7n2d"]
+[ext_resource type="Texture2D" uid="uid://bkn85kodyradh" path="res://Assets/Textures/Background layers/Layer_0010_1.png" id="10_65hh5"]
+[ext_resource type="Texture2D" uid="uid://d0g6pm1uk5wn5" path="res://Assets/Textures/Background layers/Layer_0011_0.png" id="11_6byu3"]
+[ext_resource type="FontFile" uid="uid://dwcj0qm2lxuog" path="res://Assets/Fonts/alagard.ttf" id="12_leunp"]
+[ext_resource type="Script" uid="uid://ckie43gep27v" path="res://Scripts/MenuScroll.gd" id="13_7467j"]
+[ext_resource type="FontFile" uid="uid://yt26g75b070h" path="res://Assets/Fonts/KiwiSoda.ttf" id="13_h1v62"]
+[ext_resource type="LabelSettings" uid="uid://dd4t7vvrf6lgv" path="res://Scenes/MainMenu.tres" id="16_2x1g0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5hdia"]
+font = ExtResource("13_h1v62")
+font_size = 100
+font_color = Color(0.5921569, 0.29411766, 1, 1)
+outline_size = 20
+outline_color = Color(0.22774917, 0.0006498614, 0.44073984, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fh7cp"]
+font = ExtResource("12_leunp")
+font_size = 120
+font_color = Color(0.9988598, 0.8876936, 0.64241266, 1)
+outline_size = 20
+outline_color = Color(0.57760215, 0.4289073, 0.32741717, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8e205"]
+font = ExtResource("12_leunp")
+font_size = 55
+font_color = Color(0.99999994, 0.89557433, 0.62425405, 1)
+outline_size = 20
+outline_color = Color(0.5583332, 0.43750185, 0.33262935, 1)
+
+[node name="MainMenu" type="Node3D"]
+script = ExtResource("1_8e205")
+
+[node name="WorldRoot" type="Node3D" parent="."]
+
+[node name="Background" type="Node3D" parent="WorldRoot"]
+transform = Transform3D(0.3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="WorldRoot/Background"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.1228355, 3.6892319, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_fh7cp")
+
+[node name="Sprite3D2" type="Sprite3D" parent="WorldRoot/Background"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.7052766, 3.588162, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("2_8e205")
+
+[node name="Sprite3D3" type="Sprite3D" parent="WorldRoot/Background"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.8177786, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("3_7467j")
+
+[node name="Sprite3D4" type="Sprite3D" parent="WorldRoot/Background"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.532091, 3.2564964, 0.26309776)
+gi_mode = 2
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("4_2x1g0")
+
+[node name="Sprite3D5" type="Sprite3D" parent="WorldRoot/Background"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.340775, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("5_riqfo")
+
+[node name="Sprite3D6" type="Sprite3D" parent="WorldRoot/Background"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.289927, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("6_yxkem")
+
+[node name="Sprite3D7" type="Sprite3D" parent="WorldRoot/Background"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.45241, 3.2564964, 0.26309776)
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("7_7v4os")
+
+[node name="Sprite3D8" type="Sprite3D" parent="WorldRoot/Background"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.144492, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("8_pjscj")
+
+[node name="Sprite3D9" type="Sprite3D" parent="WorldRoot/Background"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.919792, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("9_m7n2d")
+
+[node name="Sprite3D10" type="Sprite3D" parent="WorldRoot/Background"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.19874, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("10_65hh5")
+
+[node name="Sprite3D11" type="Sprite3D" parent="WorldRoot/Background"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22.86216, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("11_6byu3")
+
+[node name="Background2" type="Node3D" parent="WorldRoot"]
+transform = Transform3D(0.3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 18.50028)
+
+[node name="Sprite3D" type="Sprite3D" parent="WorldRoot/Background2"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.1228355, 3.6892319, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_fh7cp")
+
+[node name="Sprite3D2" type="Sprite3D" parent="WorldRoot/Background2"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.7052766, 3.588162, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("2_8e205")
+
+[node name="Sprite3D3" type="Sprite3D" parent="WorldRoot/Background2"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.8177786, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("3_7467j")
+
+[node name="Sprite3D4" type="Sprite3D" parent="WorldRoot/Background2"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.532091, 3.2564964, 0.26309776)
+gi_mode = 2
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("4_2x1g0")
+
+[node name="Sprite3D5" type="Sprite3D" parent="WorldRoot/Background2"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.340775, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("5_riqfo")
+
+[node name="Sprite3D6" type="Sprite3D" parent="WorldRoot/Background2"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.289927, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("6_yxkem")
+
+[node name="Sprite3D7" type="Sprite3D" parent="WorldRoot/Background2"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.45241, 3.2564964, 0.26309776)
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("7_7v4os")
+
+[node name="Sprite3D8" type="Sprite3D" parent="WorldRoot/Background2"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.144492, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("8_pjscj")
+
+[node name="Sprite3D9" type="Sprite3D" parent="WorldRoot/Background2"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.919792, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("9_m7n2d")
+
+[node name="Sprite3D10" type="Sprite3D" parent="WorldRoot/Background2"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.19874, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("10_65hh5")
+
+[node name="Sprite3D11" type="Sprite3D" parent="WorldRoot/Background2"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22.86216, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("11_6byu3")
+
+[node name="Background3" type="Node3D" parent="WorldRoot"]
+transform = Transform3D(0.3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -18.524807)
+
+[node name="Sprite3D" type="Sprite3D" parent="WorldRoot/Background3"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.1228355, 3.6892319, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_fh7cp")
+
+[node name="Sprite3D2" type="Sprite3D" parent="WorldRoot/Background3"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.7052766, 3.588162, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("2_8e205")
+
+[node name="Sprite3D3" type="Sprite3D" parent="WorldRoot/Background3"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.8177786, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("3_7467j")
+
+[node name="Sprite3D4" type="Sprite3D" parent="WorldRoot/Background3"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.532091, 3.2564964, 0.26309776)
+gi_mode = 2
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("4_2x1g0")
+
+[node name="Sprite3D5" type="Sprite3D" parent="WorldRoot/Background3"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.340775, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("5_riqfo")
+
+[node name="Sprite3D6" type="Sprite3D" parent="WorldRoot/Background3"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.289927, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("6_yxkem")
+
+[node name="Sprite3D7" type="Sprite3D" parent="WorldRoot/Background3"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.45241, 3.2564964, 0.26309776)
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("7_7v4os")
+
+[node name="Sprite3D8" type="Sprite3D" parent="WorldRoot/Background3"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.144492, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("8_pjscj")
+
+[node name="Sprite3D9" type="Sprite3D" parent="WorldRoot/Background3"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.919792, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("9_m7n2d")
+
+[node name="Sprite3D10" type="Sprite3D" parent="WorldRoot/Background3"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.19874, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("10_65hh5")
+
+[node name="Sprite3D11" type="Sprite3D" parent="WorldRoot/Background3"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22.86216, 3.2564964, 0.26309776)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("11_6byu3")
+
+[node name="Camera3D" type="Camera3D" parent="WorldRoot"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.975, 2.138, 9.749624)
+fov = 46.562405
+script = ExtResource("13_7467j")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="WorldRoot/Camera3D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -338.0
+offset_top = -495.0
+offset_right = 337.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="UI/MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9371406, 0.8774643, 0.6331449, 1)
+theme_override_fonts/font = ExtResource("12_leunp")
+theme_override_font_sizes/font_size = 50
+text = "Start"
+
+[node name="Options" type="Button" parent="UI/MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.64856666, 0.9270286, 0.99999994, 1)
+theme_override_fonts/font = ExtResource("12_leunp")
+theme_override_font_sizes/font_size = 50
+text = "Options"
+
+[node name="Credits" type="Button" parent="UI/MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90185, 0.84311765, 1, 1)
+theme_override_fonts/font = ExtResource("12_leunp")
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+
+[node name="Quit" type="Button" parent="UI/MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.69538945, 0.64619535, 1)
+theme_override_fonts/font = ExtResource("12_leunp")
+theme_override_font_sizes/font_size = 59
+text = "Quit"
+
+[node name="Title1" type="Label" parent="UI"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -390.0
+offset_right = 181.0
+offset_bottom = -218.99948
+grow_horizontal = 2
+grow_vertical = 2
+text = "Shadow's"
+label_settings = SubResource("LabelSettings_5hdia")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title2" type="Label" parent="UI"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.5
+offset_top = -290.0
+offset_right = 232.5
+offset_bottom = -118.99985
+grow_horizontal = 2
+grow_vertical = 2
+text = "Revenge"
+label_settings = SubResource("LabelSettings_fh7cp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -2.0
+offset_right = 14.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Credits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -598.0
+offset_top = -500.0
+offset_right = 598.0
+offset_bottom = 397.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Wood Textures - Binbun (itch.io)
+Enemy Red - Mattz Art (itch.io)
+Enemy Yellow - KBPixel Art (itch.io)
+Player - Mattz Art (itch.io)
+Forrest Background - edermunizz (itch.io)
+Dialogue Sounds - AD Sounds (itch.io)
+Bird Sounds - Sophia Q. Galindez
+Footstep Sounds - Dryoma (itch.io)
+UI SFX - Cyrex Studios (itch.io)
+Fonts:
+Kiwi Soda - jeti
+Alagard - Hewett Tsoi
+Alkhemikal - jeti
+
+Game Design - Jason Marty
+Programming - Jason Marty"
+label_settings = SubResource("LabelSettings_8e205")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Close" type="Button" parent="UI/Credits"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -184.0
+offset_top = -113.0
+offset_right = 185.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("12_leunp")
+theme_override_font_sizes/font_size = 50
+text = "Close"
+
+[node name="Label2" type="Label" parent="UI/Credits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -598.0
+offset_top = -500.0
+offset_right = 598.0
+offset_bottom = 397.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play Testers:
+
+Jonathan Burle
+Ethan Zeichner
+Matthew Garnecki
+Judy Furman
+Sophia Galindez"
+label_settings = SubResource("LabelSettings_8e205")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next" type="Button" parent="UI/Credits"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 199.0
+offset_top = -114.0
+offset_right = 568.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("12_leunp")
+theme_override_font_sizes/font_size = 50
+text = "Next
+"
+
+[node name="Previous" type="Button" parent="UI/Credits"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -570.0
+offset_top = -114.0
+offset_right = -201.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("12_leunp")
+theme_override_font_sizes/font_size = 50
+text = "Previous
+"
+
+[node name="OptionsPanel" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/OptionsPanel"]
+layout_mode = 0
+offset_left = 773.0
+offset_right = 1146.0
+offset_bottom = 67.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UI/OptionsPanel/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/OptionsPanel/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/OptionsPanel/HBoxContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Resolution"
+label_settings = ExtResource("16_2x1g0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resolution" type="OptionButton" parent="UI/OptionsPanel/HBoxContainer/VBoxContainer3/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="UI/OptionsPanel/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/OptionsPanel/HBoxContainer/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+text = "FullScreen"
+label_settings = ExtResource("16_2x1g0")
+
+[node name="Fullscreen" type="CheckBox" parent="UI/OptionsPanel/HBoxContainer/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Close" type="Button" parent="UI/OptionsPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -362.0
+offset_top = -231.0
+offset_right = 366.5
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("12_leunp")
+theme_override_font_sizes/font_size = 70
+text = "Close"

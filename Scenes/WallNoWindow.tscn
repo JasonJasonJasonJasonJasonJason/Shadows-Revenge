@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3kjxykhvluoo"]
+
+[ext_resource type="Texture2D" uid="uid://bbv5lxu7o2shn" path="res://Assets/Textures/Wood/Birch/Planks/Birch_Planks_basecolor.png" id="1_mhmf0"]
+[ext_resource type="Texture2D" uid="uid://8mi452j6uacx" path="res://Assets/Textures/Wood/Birch/Planks/Birch_Planks_ambientocclusion.png" id="2_38ee7"]
+[ext_resource type="Texture2D" uid="uid://q6uwnjfhtcnq" path="res://Assets/Textures/Wood/Birch/Planks/Birch_Planks_height.png" id="3_bxw4f"]
+[ext_resource type="Texture2D" uid="uid://c3ab277llt5s4" path="res://Assets/Textures/Wood/Birch/Planks/Birch_Planks_normal.png" id="4_gmohg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nkglm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7bgig"]
+albedo_texture = ExtResource("1_mhmf0")
+normal_enabled = true
+normal_texture = ExtResource("4_gmohg")
+ao_enabled = true
+ao_texture = ExtResource("2_38ee7")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_bxw4f")
+uv1_scale = Vector3(4, 3, 0.1)
+texture_filter = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a6sre"]
+
+[node name="Wall" type="Node3D"]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 3, 0, 0, 0, 0.1, 0, 0.9811497, 0)
+mesh = SubResource("BoxMesh_nkglm")
+surface_material_override/0 = SubResource("StandardMaterial3D_7bgig")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+shape = SubResource("BoxShape3D_a6sre")

@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://u2kmb2fmupr6"]
+
+[ext_resource type="Script" uid="uid://bksmyb2n2s1d1" path="res://Scripts/Torch.gd" id="1_77g5u"]
+[ext_resource type="Texture2D" uid="uid://ccdq281du1oka" path="res://Assets/Textures/Wood/Pine/Planks/Pine_Planks_basecolor.png" id="1_vnsoy"]
+[ext_resource type="Texture2D" uid="uid://c51jfi3ke48a3" path="res://Assets/Textures/Wood/Pine/Planks/Pine_Planks_height.png" id="2_77g5u"]
+[ext_resource type="Texture2D" uid="uid://dapwfqvjxxaew" path="res://Assets/Textures/Wood/Pine/Planks/Pine_Planks_normal.png" id="3_63p5e"]
+[ext_resource type="Texture2D" uid="uid://cy8y1r5ha1fvl" path="res://Assets/Textures/Wood/Pine/Planks/Pine_Planks_roughness.png" id="4_s1i7p"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_36sry"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3d66j"]
+albedo_texture = ExtResource("1_vnsoy")
+roughness_texture = ExtResource("4_s1i7p")
+normal_enabled = true
+normal_texture = ExtResource("3_63p5e")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_77g5u")
+uv1_scale = Vector3(0.3, 0.3, 0.1)
+texture_filter = 0
+
+[node name="Torch" type="Node3D"]
+script = ExtResource("1_77g5u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.27062663, -0.043155055, 0, 0.12946516, 0.09020888, 0, 0, 0)
+mesh = SubResource("CylinderMesh_36sry")
+surface_material_override/0 = SubResource("StandardMaterial3D_3d66j")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." groups=["Torch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62273115, 0.9381196)
+light_color = Color(0.8896139, 0.39101714, 0, 1)
+shadow_enabled = true
+omni_range = 1.0490849

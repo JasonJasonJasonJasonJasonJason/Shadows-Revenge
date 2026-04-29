@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://chdxkoa11u7t3"]
+
+[ext_resource type="Script" uid="uid://iif5pepef3o4" path="res://Scripts/Player.gd" id="1_rpqav"]
+[ext_resource type="SpriteFrames" uid="uid://dhghi5ldwqhdu" path="res://Assets/Textures/Player/Sprites/Player.tres" id="2_kyqiw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u8k5t"]
+size = Vector3(0.29571533, 0.37548828, 0.07589722)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kyqiw"]
+size = Vector3(1, 1, 1.2752686)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_rpqav")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16960469, 0)
+billboard = 1
+texture_filter = 0
+sprite_frames = ExtResource("2_kyqiw")
+animation = &"Death"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.0063171387, 0.03100586, -0.0026397705)
+shape = SubResource("BoxShape3D_u8k5t")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.0660943, 0.07469112, -0.0050072074)
+current = true
+
+[node name="Hitbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0.13763428)
+shape = SubResource("BoxShape3D_kyqiw")
+debug_color = Color(0.99614686, 0, 0.20082754, 0.41960785)
