@@ -141,26 +141,41 @@ Used files:
 #  Project Structure (Simplified)
 
 MainMenu
+
 ├── UI
+
 │    ├── MarginContainer
+
 │    ├── Title1
+
 │    ├── Title2
+
 │    ├── Credits
+
 │    └── OptionsPanel
+
 └── WorldRoot
+
 └── Camera3D
+
 └── AudioStreamPlayer3D
 
-Player
-└── UI
-├── PlayerBubble
-├── NarratorBox
-├── Proceed
-├── Letterbox
-├── PauseMenu
-└── OptionsPanel
-Code
 
+Player
+
+└── UI
+
+├── PlayerBubble
+
+├── NarratorBox
+
+├── Proceed
+
+├── Letterbox
+
+├── PauseMenu
+
+└── OptionsPanel
 
 ---
 
