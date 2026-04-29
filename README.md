@@ -71,7 +71,7 @@ A simple, reusable audio system for all UI interactions.
 
 ---
 
-# 🧍 Player System
+# Player System
 The Player scene includes:
 
 ### Components:
@@ -125,7 +125,7 @@ A custom traversal system allowing the player to move between the light world an
 
 ---
 
-# 🎵 Audio
+#  Audio
 All UI audio stored in:
 
 res://Assets/SFX/UI/
@@ -172,11 +172,11 @@ Code
 
 ---
 
-# 📄 License
-MIT License (or your preferred license)
+#  License
+MIT License
 
 ---
 
-# 👤 Developer
+#  Developer
 **Jason Marty**  
 South Side Studios  
