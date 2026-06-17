@@ -55,7 +55,7 @@ A unified settings system used by both Main Menu and Pause Menu.
 
 ---
 
-# 🔊 UI Audio System
+# UI Audio System
 A simple, reusable audio system for all UI interactions.
 
 ### Implementation:
@@ -107,7 +107,7 @@ A custom traversal system allowing the player to move between the light world an
 
 ---
 
-# 🗨️ Dialogue & UI Elements
+# Dialogue & UI Elements
 ### PlayerBubble
 - Displays player dialogue
 - Clean panel + label layout
